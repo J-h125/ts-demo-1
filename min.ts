@@ -1,15 +1,22 @@
+enum Gender{
+    Male,
+    Female
+}
 
 interface Person{
-    gender:string
+    gender:Gender
 }
 function merry(a:Person,b:Person):[Person,Person]{
     if(a.gender!==b.gender){
         return [a,b]
     }else{
-        throw new Error('性别不同')
+        throw new Error('性别相同')
     }
 
 }
+let  a1 = {gender:Gender.Male}
+let  b1 = {gender:Gender.Female}
+console.log(merry(a1,b1))
 
 // function selectSort(a:number[]):number[]{
 //     for(let i =0;i<a.length-1;i++){
